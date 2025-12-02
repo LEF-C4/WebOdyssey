@@ -45,7 +45,48 @@
   <p>Vins rouges / blancs (verre) - 32,80 F</p>
   <p>Café / thé - 16,40 F</p>
 </p>
+<!-- Script réalisé par Chat GPT-->
 
+
+
+
+<!-- =============================== -->
+<!--     SCRIPT SIMULATEUR 1991      -->
+<!-- =============================== -->
+<script>
+// SIMULE UN TELECHARGEMENT TRES LENT (14 kb/s)
+// -------------------------------------------------
+
+// 1. Masquer le body d'abord
+document.body.style.opacity = "0";
+
+// 2. Loader texte qui clignote
+const loading = document.createElement("div");
+loading.textContent = "Chargement du site... (0.014 Mb/s)";
+loading.style.fontSize = "18px";
+loading.style.textAlign = "center";
+loading.style.marginTop = "40px";
+document.body.prepend(loading);
+
+let blink = setInterval(() => {
+    loading.style.visibility = (loading.style.visibility === "hidden") ? "visible" : "hidden";
+}, 500);
+
+// 3. Attendre un temps proportionnel à un débit 14 kb/s
+// Temps volontairement lent : ~5 secondes (modifiable)
+setTimeout(() => {
+
+    clearInterval(blink);   // stop clignotement
+    loading.remove();       // retirer le texte
+
+    // révéler lentement le site original
+    document.body.style.transition = "opacity 3s";
+    document.body.style.opacity = "1";
+
+}, 5000); // durée du "téléchargement" (modifiable)
+
+</script>
 </body>
+
 
 </html>
