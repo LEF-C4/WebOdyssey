@@ -48,7 +48,7 @@
 
         .banniere {
             height: 100vh;
-            background-image: url("Restaurant2020s.jpg");
+            background-image: url("restaurant2020.jpg");
              background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -147,4 +147,5 @@
 #informations {display: flex;align-items: flex-start; justify-content: space-around;}
 
 #reseaux{display: flex;align-items: flex-start; justify-content: space-around; gap:50px;}
+
 #reseaux a{color:red;}
