@@ -2,19 +2,126 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-<head>
-  <meta charset="utf-8">
-  <title>Le GV 1995- Fiches techniques</title>
+  <title>Le GV 1995</title>
   <link rel="stylesheet" href="1995-2000.css">
-  
 </head>
 <body>
-<p>Jusqu’en 1995, les évolutions de l’HTML sont surtout permises par l’innovation des navigateurs. En 1993 le navigateur NSCA Mosaic permet l’ajout d’images et de formulaires, ce qui permet le début du commerce électronique. En 1994, Netscape Navigator présente des éléments qui permettent de structurer les pages, comme la gestion des tables. On reprend alors le principe du SGML en laissant le visuel à une feuille de style, c’est le début du CSS. Le HTML 2.0 est officialisé en 1995, mais ne prend en compte que les avancées avant les innovations des navigateurs en 1994 . 
+
+  
+
+  <img src="banniere.jpg" class="banniere">
+
+  <h1>Le Gourmet Voyageur</h1>
+
+  <table>
+    <tr>
+      <!-- Colonne Menu -->
+      <td width="20%" class="menu">
+        <table width="100%" height="100%">
+          <tr>
+            <td>
+              <h2>Menu</h2>
+           <a href="Apropos1995.html"><p>À propos</p></a>
+            <a href="Menu1995.html"><p>Nos menus</p></a>
+            <a href="Inspirations1995.html"><p>Nos inspirations</p></a>
+             <a href="contact1995.html"><p>Contact et réservations</p></a>        </tr> 
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Réservations au 02.02.02.02.02.<br><br>
+              Venez nous rendre visite au 02 allée des saveurs, Paris 16e</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+     
+      <td width="60%">
+       
+<p></p>
+        </table>
+
+      <p>Jusqu’en 1995, les évolutions de l’HTML sont surtout permises par l’innovation des navigateurs. En 1993 le navigateur NSCA Mosaic permet l’ajout d’images et de formulaires, ce qui permet le début du commerce électronique. En 1994, Netscape Navigator présente des éléments qui permettent de structurer les pages, comme la gestion des tables. On reprend alors le principe du SGML en laissant le visuel à une feuille de style, c’est le début du CSS. Le HTML 2.0 est officialisé en 1995, mais ne prend en compte que les avancées avant les innovations des navigateurs en 1994 . 
 Donc les sites créés entre 1995 et début 2000 sont majoritairement structurés en tableaux, avec un léger CSS. Le CSS1 est publié en 1996 avec une cinquantaine de propriétés, notamment les rendus du texte (couleur, taille, graisse, etc.) et des blocs de textes (bordures, marges, etc.). Ils sont surchargés de texte et de liens mais n’ont pas encore trop de couleurs ou de gifs. 
 J’ai manuellement modifié la qualité des images présentes sur le site. Il est structuré par les balises <tables> avec beaucoup de marges, de bordures, et de liens.
 Le mailto est un URI (Uniform Resource Identifier) qui crée un lien hypertexte vers une adresse électronique. Il est défini pour la première fois en 1994. La documentation HTML2.0  souligne que les URI peuvent être utilisés. Donc le site de 1991 ne peut pas en contenir, mais les sites à partir de celui de 1995 oui .	
-</p>
+En 1997, le HTML 3.2 puis 4.0 sont définis, décrivant les pratiques courantes (donc en prenant en compte les avancées des navigateurs depuis 1994). On voit apparaître le début des scripts JavaScript. </p>
 
+
+     
+    </tr>
+  </table>
+<!-- =============================== -->
+<!-- SIMULATION 1995-2000 + IMAGES  -->
+<!-- MODEM 56 kb/s et rendu ligne par ligne -->
+<!-- =============================== -->
+<script>
+// Masquer tout le contenu du site
+document.body.style.opacity = "0";
+
+// Création du message de chargement
+const loading = document.createElement("div");
+loading.textContent = "Connexion modem 56k… Chargement du site (0.056 Mb/s)";
+loading.style.fontSize = "18px";
+loading.style.textAlign = "center";
+loading.style.marginTop = "40px";
+loading.style.fontFamily = "Arial, Helvetica, sans-serif";
+document.body.prepend(loading);
+
+// Clignotement du texte façon années 90
+let blink = setInterval(() => {
+    loading.style.visibility = (loading.style.visibility === "hidden") ? "visible" : "hidden";
+}, 400);
+
+// Fonction pour révéler une image ligne par ligne
+function revealImageLineByLine(img, lines = 25, delay = 80) {
+    img.style.visibility = "hidden";
+    img.style.display = "block";
+    img.style.position = "relative";
+
+    const wrapper = document.createElement("div");
+    wrapper.style.width = img.width + "px";
+    wrapper.style.height = img.height + "px";
+    wrapper.style.overflow = "hidden";
+    wrapper.style.position = "relative";
+    img.parentNode.insertBefore(wrapper, img);
+    wrapper.appendChild(img);
+
+    const bandHeight = Math.ceil(img.height / lines);
+
+    for (let i = 0; i < lines; i++) {
+        setTimeout(() => {
+            const band = document.createElement("div");
+            band.style.backgroundImage = `url(${img.src})`;
+            band.style.backgroundPosition = `0 -${i*bandHeight}px`;
+            band.style.backgroundSize = `100% ${img.height}px`;
+            band.style.height = bandHeight + "px";
+            band.style.width = "100%";
+            wrapper.appendChild(band);
+
+            // Montrer l'image originale à la dernière ligne
+            if (i === lines - 1) img.style.visibility = "visible";
+        }, i * delay);
+    }
+}
+
+// Simulation du temps de chargement total (~2,5s pour 56k)
+setTimeout(() => {
+    clearInterval(blink);       // Arrêter le clignotement
+    loading.remove();           // Supprimer le message
+    document.body.style.transition = "opacity 2.5s";
+    document.body.style.opacity = "1";
+
+    // Appliquer l'effet ligne par ligne à toutes les images
+    const images = document.querySelectorAll("img");
+    images.forEach(img => revealImageLineByLine(img, 25, 80));
+
+}, 2500);
+</script>
 
 </body>
 </html>
+
+
+
