@@ -149,3 +149,26 @@
 #reseaux{display: flex;align-items: flex-start; justify-content: space-around; gap:50px;}
 
 #reseaux a{color:red;}
+
+.carte {
+    width: 100%;
+    margin: 20px 0 40px 0;
+}
+
+.carte td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+}
+
+.carte td.prix {
+    text-align: right;
+    font-weight: 600;
+}
+
+.carte tr:hover td {
+    background: #f0f0f0;
+}
+
+
+
